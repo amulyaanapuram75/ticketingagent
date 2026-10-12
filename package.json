@@ -1,0 +1,22 @@
+{
+  "name": "neutara-ticket-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI agent that analyzes Neutara tickets by topic and recommends solutions with citations.",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev": "concurrently -k -n backend,frontend -c blue,magenta \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "probe": "npm --prefix backend run probe",
+    "sync:now": "npm --prefix backend run sync:now",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build && npm --prefix backend install",
+    "start": "npm --prefix backend start"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

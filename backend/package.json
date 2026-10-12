@@ -1,0 +1,22 @@
+{
+  "name": "neutara-ticket-agent-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js",
+    "probe": "node src/cli/probe.js",
+    "sync:now": "node src/cli/syncNow.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "node-cron": "^3.0.3",
+    "openai": "^4.73.1"
+  }
+}

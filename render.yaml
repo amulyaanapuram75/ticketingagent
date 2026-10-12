@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: neutara-ticket-agent
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: PORT
+        value: "10000"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_CHAT_MODEL
+        value: gpt-4o-mini
+      - key: OPENAI_EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: TICKETING_BASE_URL
+        value: https://neutaraticketing.cftools.live
+      - key: TICKETING_API_KEY
+        sync: false
+      - key: TICKETING_AUTH_STYLE
+        value: bearer
+      - key: TICKETING_LIST_ENDPOINT
+        value: /api/issues
+      - key: SYNC_INTERVAL_HOURS
+        value: "6"
+      - key: SYNC_PAGE_SIZE
+        value: "100"
+      - key: SYNC_ON_STARTUP
+        value: "false"
+      - key: SYNC_MAX_TICKETS
+        value: ""
